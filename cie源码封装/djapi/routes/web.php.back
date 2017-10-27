@@ -1,0 +1,91 @@
+<?php
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+// 开发环境路由
+Route::group(['namespace' => 'V0'], function(){
+	Route::any('swagger/doc', 'SwaggerController@doc');
+
+	// 用户模块
+	Route::any('user/register_third', 'UserController@registerThirdParty');
+	Route::any('user/info', 'UserController@userInfo');
+	Route::any('user/update', 'UserController@updateUserInfo');
+	Route::any('user/sms', 'UserController@getSMS');
+	Route::any('user/auth_mobile', 'UserController@authMobile');
+	Route::any('user/auth_idcard', 'UserController@authIDcard');
+
+	// 约战模块
+	Route::any('pmatch/list', 'PmatchController@pmatchList');
+
+
+	// 大赛报名模块
+	Route::any('match/list', 'MatchController@matchList');
+	Route::any('match/apply_list', 'MatchController@applyList');// 游戏参赛列表
+	Route::any('match/myapply_list', 'MatchController@myApplyList');// 我的参赛列表
+	Route::any('match/game_info', 'MatchController@gameApplyInfo');// 游戏需填写信息
+});
+
+
+// Version 1
+Route::group(['namespace' => 'V1'], function(){
+	// swagger文档
+	Route::any('swagger/doc/v1', 'SwaggerController@doc');
+
+	// 用户模块
+	Route::any('user/register_third/v1', 'UserController@registerThirdParty');
+	Route::any('user/info/v1', 'UserController@userInfo');
+	Route::any('user/update/v1', 'UserController@updateUserInfo');
+	Route::any('user/sms/v1', 'UserController@getSMS');
+	Route::any('user/auth_mobile/v1', 'UserController@authMobile');
+	Route::any('user/auth_idcard/v1', 'UserController@authIDcard');
+
+	// 约战模块
+	Route::any('pmatch/list/v1', 'PmatchController@pmatchList');
+
+	// 大赛报名模块
+		Route::any('match/list/v1', 'MatchController@matchList');
+		Route::any('match/apply_list/v1', 'MatchController@applyList');// 游戏参赛列表
+		Route::any('match/myapply_list/v1', 'MatchController@myApplyList');// 我的参赛列表
+		Route::any('match/game_info/v1', 'MatchController@gameApplyInfo');// 游戏需填写信息
+});
+
+// Version 2
+Route::group(['namespace' => 'V2'], function(){
+	// swagger文档
+	Route::any('swagger/doc/v2', 'SwaggerController@doc');
+
+	// 用户模块
+	Route::any('user/register_third/v2', 'UserController@registerThirdParty');
+	Route::any('user/info/v2', 'UserController@userInfo');
+	Route::any('user/update/v2', 'UserController@updateUserInfo');
+	Route::any('user/sms/v2', 'UserController@getSMS');
+	Route::any('user/auth_mobile/v2', 'UserController@authMobile');
+	Route::any('user/auth_idcard/v2', 'UserController@authIDcard');
+
+	// 约战模块
+	Route::any('pmatch/list/v2', 'PmatchController@pmatchList');
+
+	// 大赛报名模块
+	Route::any('match/list/v2', 'MatchController@matchList');
+	Route::any('match/apply_list/v2', 'MatchController@applyList');// 游戏参赛列表
+	Route::any('match/myapply_list/v2', 'MatchController@myApplyList');// 我的参赛列表
+	Route::any('match/game_info/v2', 'MatchController@gameApplyInfo');// 游戏需填写信息
+});
+
+
+
+
+

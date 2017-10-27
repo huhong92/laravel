@@ -1,0 +1,3 @@
+/djapi/app/Http/Controllers/v1/SwaggerController.php
+/djapi/app/Http/Controllers/v2/SwaggerController.php
+/djapi/public/doc
